@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "787145919379",
+    "project_id": "gerenciadorfinanceiro-4f7f6",
+    "storage_bucket": "gerenciadorfinanceiro-4f7f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787145919379:android:8492c12d79b21bcbf1f666",
+        "android_client_info": {
+          "package_name": "com.example.genrenciadorfinanceiro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787145919379-opovqajc57fldh7b1vurrher8b1fgkun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpiScRJSxqLy0WQCepN0BrJto4WxR0ZUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787145919379-opovqajc57fldh7b1vurrher8b1fgkun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
