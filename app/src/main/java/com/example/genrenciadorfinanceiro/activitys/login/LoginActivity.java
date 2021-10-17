@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     //botoes
     private Button botaoCadastrar, botaoLogin;
     private EditText textoEmail, textoSenha;
+    private Usuario usuario;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,18 @@ public class LoginActivity extends AppCompatActivity {
         botaoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String nomeEmail = textoEmail.getText().toString();
+                String nomeSenha = textoSenha.getText().toString();
 
+                if (!nomeEmail.isEmpty()) {
+                    if (!nomeSenha.isEmpty()) {
+
+                    } else{
+                        Toast.makeText(LoginActivity.this, "Senha Invalida", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "email invalido", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

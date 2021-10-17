@@ -39,6 +39,7 @@ public class CadastroActivity extends AppCompatActivity {
         textoEmail = findViewById(R.id.emailCadastro);
         textoSenha = findViewById(R.id.senhaCadastro);
         botaoCadastrar = findViewById(R.id.buttonCadastrar);
+
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +69,6 @@ public class CadastroActivity extends AppCompatActivity {
                 if ( task.isSuccessful() ){
                     finish();
                 }else {
-
                     String excecao = "";
                     try {
                         throw task.getException();
@@ -89,4 +89,5 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
     }
+
 }
