@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.genrenciadorfinanceiro.R;
+import com.example.genrenciadorfinanceiro.activitys.MainActivity;
 import com.example.genrenciadorfinanceiro.config.firebase.ConfiguracaoFirebase;
 import com.example.genrenciadorfinanceiro.databinding.ActivityLoginBinding;
 import com.example.genrenciadorfinanceiro.model.Usuario;
@@ -68,6 +69,8 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if ( task.isSuccessful() ){
                     finish();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity( intent );
                 }else {
                     String excecao = "";
                     try {

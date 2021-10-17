@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.genrenciadorfinanceiro.R;
+import com.example.genrenciadorfinanceiro.activitys.MainActivity;
 import com.example.genrenciadorfinanceiro.config.firebase.ConfiguracaoFirebase;
 import com.example.genrenciadorfinanceiro.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button botaoCadastrar, botaoLogin;
     private EditText textoEmail, textoSenha;
     private Usuario usuario;
+    private FirebaseAuth autenticacao;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +56,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!nomeEmail.isEmpty()) {
                     if (!nomeSenha.isEmpty()) {
-
+                        usuario = new Usuario();
+                        usuario.setEmail(nomeEmail);
+                        usuario.setSenha(nomeSenha);
+                        validacaodelogin();
                     } else{
                         Toast.makeText(LoginActivity.this, "Senha Invalida", Toast.LENGTH_SHORT).show();
                     }
@@ -73,5 +78,21 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    public void validacaodelogin(){
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        autenticacao.signInWithEmailAndPassword(
+                usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Login Executado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity( intent );
+                }else{
+                    Toast.makeText(LoginActivity.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
+                }
 
+            }
+        });
+    }
 }
