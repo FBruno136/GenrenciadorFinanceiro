@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.103125" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout-w1240dp/activity_cadastro.xml" value="0.11360544217687076" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/activity_aplicacao.xml" value="0.25" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/activity_cadastro.xml" value="0.33" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/fragment_first.xml" value="0.5" />
+        <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/fragment_second.xml" value="0.33" />
         <entry key="..\:/Users/bruno/AndroidStudioProjects/GenrenciadorFinanceiro/app/src/main/res/layout/login_cadastro.xml" value="0.33" />
       </map>
     </option>

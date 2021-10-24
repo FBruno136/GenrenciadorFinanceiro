@@ -4,19 +4,15 @@ por bruno fernandes ^^,
 */
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.sip.SipSession;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.genrenciadorfinanceiro.R;
-import com.example.genrenciadorfinanceiro.activitys.login.CadastroActivity;
+import com.example.genrenciadorfinanceiro.activitys.Aplicacao.AplicacaoActivity;
 import com.example.genrenciadorfinanceiro.activitys.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -43,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         textInicial = findViewById(R.id.textoInicial);
 
         if( usuario.getCurrentUser() != null ){
-            textInicial.setText("usuario logado");
+            textInicial.setText("Usuario logado");
         }else {
-            textInicial.setText("usuario não conectado");
-            botaodeslogar.setVisibility(View.INVISIBLE);
+            textInicial.setText("usuario Deslogado");
+            botaodeslogar.setVisibility(View.INVISIBLE); //Torna o botao de deslogar invisivel
         }
 
         //Colocando um evento de click nessa variavel
@@ -55,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 /*Verifica usuario logado*/
                 if( usuario.getCurrentUser() != null ){
-                    Toast.makeText(MainActivity.this, "Usuario ja Logado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), AplicacaoActivity.class);
+                    startActivity( intent );
                 }else {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity( intent );
@@ -68,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 /*Verifica usuario logado*/
                 if( usuario.getCurrentUser() != null ){
                     signOut();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity( intent );
                 }else {
                     Toast.makeText(MainActivity.this, "Usuario ja deslogado", Toast.LENGTH_LONG).show();
                 }

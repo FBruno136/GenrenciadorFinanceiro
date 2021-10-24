@@ -53,6 +53,7 @@ public class CadastroActivity extends AppCompatActivity {
                         usuario.setEmail(nomeEmail);
                         usuario.setSenha(nomeSenha);
                         CadastrarUser();
+                        finish();
                     }
                 } else {
                     Toast.makeText(CadastroActivity.this, "Por favor preenha os campos corretamente", Toast.LENGTH_SHORT).show();

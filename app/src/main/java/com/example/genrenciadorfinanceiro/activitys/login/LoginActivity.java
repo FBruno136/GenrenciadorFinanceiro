@@ -22,6 +22,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class LoginActivity extends AppCompatActivity {
     //tela de login do usuario
@@ -69,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        //Chama a active Cadastro
         botaoCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,11 +89,24 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(LoginActivity.this, "Login Executado", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity( intent );
+                    finish();
                 }else{
-                    Toast.makeText(LoginActivity.this, "Erro ao fazer login", Toast.LENGTH_SHORT).show();
+                    String excecao = "";
+                    try {
+                        throw task.getException();
+                    }catch (FirebaseAuthInvalidUserException e) {
+                        excecao = "Usuario nao esta cadastrado: " + e.getMessage();
+                    }catch (FirebaseAuthInvalidCredentialsException e){
+                            excecao = "Email ou senha nao cadastrada "  + e.getMessage();
+                    }catch (Exception e){
+                        excecao = "Erro ao logar usuário: "  + e.getMessage();
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(LoginActivity.this, excecao, Toast.LENGTH_SHORT).show();
+
                 }
 
             }
