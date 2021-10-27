@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.genrenciadorfinanceiro.R;
-import com.example.genrenciadorfinanceiro.activitys.MainActivity;
+import com.example.genrenciadorfinanceiro.activitys.Aplicacao.MainActivity;
 import com.example.genrenciadorfinanceiro.config.firebase.ConfiguracaoFirebase;
 import com.example.genrenciadorfinanceiro.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,8 +24,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class LoginActivity extends AppCompatActivity {
     //tela de login do usuario

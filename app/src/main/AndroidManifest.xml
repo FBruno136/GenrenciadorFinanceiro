@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.genrenciadorfinanceiro" >
+    package="com.example.genrenciadorfinanceiro">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,13 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GenrenciadorFinanceiro" >
+        android:theme="@style/Theme.GenrenciadorFinanceiro">
         <activity
-            android:name=".activitys.Aplicacao.AplicacaoActivity"
-            android:exported="true"
-            android:label="@string/title_activity_aplicacao"
-            android:theme="@style/Theme.GenrenciadorFinanceiro.NoActionBar" >
-        </activity>
+            android:name=".activitys.Aplicacao.PrincipalActivity"
+            android:exported="false"
+            android:label="@string/title_activity_principal" />
         <activity
             android:name=".activitys.login.CadastroActivity"
             android:exported="false"
@@ -26,8 +24,8 @@
             android:exported="false"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".activitys.MainActivity"
-            android:exported="true" >
+            android:name=".activitys.Aplicacao.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

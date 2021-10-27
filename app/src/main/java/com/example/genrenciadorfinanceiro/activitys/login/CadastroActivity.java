@@ -4,7 +4,6 @@ por bruno fernandes ^^,
 */
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.genrenciadorfinanceiro.R;
-import com.example.genrenciadorfinanceiro.activitys.MainActivity;
+import com.example.genrenciadorfinanceiro.activitys.Aplicacao.MainActivity;
 import com.example.genrenciadorfinanceiro.config.firebase.ConfiguracaoFirebase;
 import com.example.genrenciadorfinanceiro.databinding.ActivityLoginBinding;
 import com.example.genrenciadorfinanceiro.model.Usuario;
