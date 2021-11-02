@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenrenciadorFinanceiro">
         <activity
+            android:name=".activitys.Aplicacao.ui.inicial.EntradaSaidaActivity"
+            android:exported="false"
+            android:label="@string/title_activity_inicial"
+            android:theme="@style/Theme.GenrenciadorFinanceiro.NoActionBar" />
+        <activity
             android:name=".activitys.Aplicacao.PrincipalActivity"
             android:exported="false"
             android:label="@string/title_activity_principal"

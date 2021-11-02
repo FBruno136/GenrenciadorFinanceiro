@@ -37,4 +37,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_inicial">InicialActivity</string>
+    <string name="textValor">Digite o Valor</string>
+    <string name="TextCategoria">Digite a Categoria</string>
+    <string name="TextDescrição">Digite uma descrição</string>
+    <string name="TextEntrada">Entrada</string>
+    <string name="TextSaida">Saida</string>
 </resources>
