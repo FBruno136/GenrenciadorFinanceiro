@@ -8,5 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="fundo">#222222</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="botoes">#EEEEEE</color>
+    <color name="botoes">#FF0000</color>
 </resources>

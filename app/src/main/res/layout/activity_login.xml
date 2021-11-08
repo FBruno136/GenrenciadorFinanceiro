@@ -22,8 +22,8 @@
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:textColor="#B64D4D"
-        android:textColorHint="#E91E63"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +40,8 @@
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +54,8 @@
         android:layout_gravity="start"
         android:layout_marginTop="20dp"
         android:text="@string/action_sign_in"
-        app:backgroundTint="?attr/colorAccent"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/botoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senhaLogin" />
@@ -63,6 +66,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:text="@string/action_register"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/botoes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

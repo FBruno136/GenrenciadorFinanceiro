@@ -1,22 +1,13 @@
-package com.example.genrenciadorfinanceiro.activitys;
+package com.example.genrenciadorfinanceiro.activitys.Aplicacao;
 /* Criado
 por bruno fernandes ^^,
 */
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
-import android.net.sip.SipSession;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.genrenciadorfinanceiro.R;
-import com.example.genrenciadorfinanceiro.activitys.login.CadastroActivity;
 import com.example.genrenciadorfinanceiro.activitys.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -26,10 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     //criando variavel
     //botoes
-    private Button botaologar, botaodeslogar;
+    private Button botaologar;
     private FirebaseAuth usuario = FirebaseAuth.getInstance();
-    private TextView textInicial;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
         //atribuindo um valor a essa variavel
         botaologar = findViewById(R.id.buttonInicial);
-        botaodeslogar = findViewById(R.id.buttonSingOut);
-        textInicial = findViewById(R.id.textoInicial);
 
+        //FirebaseAuth.getInstance().signOut(); //Comando pra deslogar a conta!
         if( usuario.getCurrentUser() != null ){
-            textInicial.setText("usuario logado");
-        }else {
-            textInicial.setText("usuario não conectado");
-            botaodeslogar.setVisibility(View.INVISIBLE);
+            Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
+            startActivity( intent );
         }
 
         //Colocando um evento de click nessa variavel
@@ -55,28 +41,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 /*Verifica usuario logado*/
                 if( usuario.getCurrentUser() != null ){
-                    Toast.makeText(MainActivity.this, "Usuario ja Logado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), PrincipalActivity.class);
+                    startActivity( intent );
                 }else {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity( intent );
                 }
             }
         });
-        botaodeslogar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*Verifica usuario logado*/
-                if( usuario.getCurrentUser() != null ){
-                    signOut();
-                }else {
-                    Toast.makeText(MainActivity.this, "Usuario ja deslogado", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
-    public void signOut() {
-        // [START auth_sign_out]
-        FirebaseAuth.getInstance().signOut();
-        // [END auth_sign_out]
-    }
+
 }
